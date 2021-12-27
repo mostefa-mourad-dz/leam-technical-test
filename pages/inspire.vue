@@ -20,6 +20,15 @@
 
 <script>
 export default {
-  name: 'InspirePage'
+  name: 'InspirePage',
+  mounted () {
+    // test renovation integration when the page load to the browser
+    this.$renovation.auth
+    .login({
+        email: "test-user@abc.com",
+        password: "mostcomplexpassword"
+    })
+    .then(response => console.log(response));
+    },
 }
 </script>
